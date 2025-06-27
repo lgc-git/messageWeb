@@ -42,6 +42,11 @@ export default defineConfig(({ mode }) => {
           ws: false,
           // 是否允许跨域
           changeOrigin: true
+        },
+        "/api/sina": {
+          target: "https://money.finance.sina.com.cn",
+          changeOrigin: true,
+          rewrite: path => path.replace(/^\/api\/sina/, "")
         }
       },
       // 是否允许跨域

@@ -69,7 +69,7 @@ export const constantRoutes: RouteRecordRaw[] = [
     redirect: "/demo/unocss",
     name: "Demo",
     meta: {
-      title: "示例集合",
+      title: "我的应用",
       elIcon: "DataBoard"
     },
     children: [
@@ -87,7 +87,7 @@ export const constantRoutes: RouteRecordRaw[] = [
         name: "ElementPlus",
         meta: {
           title: "Element Plus",
-          keepAlive: true
+          keepAlive: true // keepAlive: true 表示该页面会被缓存，不会被销毁
         }
       },
       {
@@ -96,7 +96,16 @@ export const constantRoutes: RouteRecordRaw[] = [
         name: "VxeTable",
         meta: {
           title: "Vxe Table",
-          keepAlive: true
+          keepAlive: true // keepAlive: true 表示该页面会被缓存，不会被销毁
+        }
+      },
+      {
+        path: "message",
+        component: () => import("@/pages/demo/message/index.vue"),
+        name: "Message",
+        meta: {
+          title: "消息",
+          keepAlive: true // keepAlive: true 表示该页面会被缓存，不会被销毁
         }
       },
       {
@@ -106,7 +115,7 @@ export const constantRoutes: RouteRecordRaw[] = [
         name: "Level2",
         meta: {
           title: "二级路由",
-          alwaysShow: true
+          alwaysShow: true // alwaysShow: true 表示即使只有一个子路由也会显示父级菜单
         },
         children: [
           {
@@ -115,7 +124,7 @@ export const constantRoutes: RouteRecordRaw[] = [
             name: "Level3",
             meta: {
               title: "三级路由",
-              keepAlive: true
+              keepAlive: true // keepAlive: true 表示该页面会被缓存，不会被销毁
             }
           }
         ]
